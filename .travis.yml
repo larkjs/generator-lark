@@ -1,6 +1,0 @@
-language: node_js
-node_js:
-  - '0.10'
-before_install:
-  - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-lark' ]; then cd .. && eval "mv $currentfolder generator-lark" && cd generator-lark; fi
