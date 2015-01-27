@@ -2,61 +2,53 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var path = require('path');
 
 module.exports = yeoman.generators.Base.extend({
+  constructor: function () {
+    yeoman.generators.Base.apply(this, arguments);
+    this.argument('appname', {type: String, required: false});
+    this.cwd = path.basename(process.cwd());
+    this.appname = this.appname || this.cwd;
+    this.appname = this._.camelize(this._.slugify(this._.humanize(this.appname)));
+  },
   initializing: function () {
     this.pkg = require('../package.json');
+    this.log(yosay(
+      'Welcome to ' + chalk.red('Lark.js') + ' generator!'
+    ));
   },
 
   prompting: function () {
-    var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the mind-blowing' + chalk.red('Lark') + ' generator!'
-    ));
-
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
-
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
-
-      done();
-    }.bind(this));
   },
 
   writing: {
-    app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
+    mkdir: function () {
+      if (this.appname != this.cwd) {
+        this.mkdir(this.appname);
+        process.chdir(this.appname);
+      }
     },
-
-    projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
-      );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
+    file: function () {
+      this.template('package.json', 'package.json', {appname: this.appname});
+      this.copy('index.js');
+    },
+    config: function () {
+      this.directory('config', 'config');
+    },
+    controllers: function () {
+      this.directory('controllers', 'controllers');
+    },
+    models: function () {
+      this.directory('models', 'models');
     }
   },
 
   install: function () {
     this.installDependencies({
-      skipInstall: this.options['skip-install']
+      skipInstall: this.options['skip-install'],
+      bower: false
     });
   }
 });

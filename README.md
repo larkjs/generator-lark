@@ -1,47 +1,78 @@
-# generator-lark [![Build Status](https://secure.travis-ci.org/larkjs/generator-lark.png?branch=master)](https://travis-ci.org/larkjs/generator-lark)
-
-> [Yeoman](http://yeoman.io) generator
+# Lark.js generator 
 
 
-## Getting Started
+> Yeoman generator for Lark.js - lets you quickly set up a project with sensible defaults and best practices.
 
-### What is Yeoman?
 
-Trick question. It's not a thing. It's this guy:
 
-![](http://i.imgur.com/JHaAlBJ.png)
+## Usage
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```bash
-npm install -g yo
+Install `generator-lark`:
 ```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-lark from npm, run:
-
-```bash
 npm install -g generator-lark
 ```
 
-Finally, initiate the generator:
+You can Skip this by pass an app name . Make a new directory, and `cd` into it.:
+```
+mkdir my-new-project && cd $_
+```
 
+Run `yo lark`, optionally passing an app name:
+```
+yo lark [app-name]
+```
+
+## Generators
+
+Available generators:
+
+* [lark](#app) (aka [angular:app](#app))
+* [lark:controller](#controller)
+* [lark:data](#dataService)
+* [lark:page](#pageService)
+* [lark:dao](#dao)
+
+**Note: Generators are to be run from the root directory of your app.**
+
+### App
+Sets up a new Lark.js app, generating all the boilerplate you need to get started. 
+
+Example:
 ```bash
 yo lark
 ```
 
-### Getting To Know Yeoman
+### controller
+Generate controller file
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+Example:
+```bash
+yo lark:controller user  # create controllers/user/index.js
+yo lark:controller user/  # create controllers/user/index.js
+yo lark:controller user/create.js  # create controllers/user/create.js
+```
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+### dataService
+Generate dataService file
 
+Example:
+```bash
+yo lark:data user.js  # create models/dataService/user.js
+```
 
-## License
+### pageService
+Generate pageService file
 
-MIT
+Example:
+```bash
+yo lark:page user.js  # create models/pageService/user.js
+```
+
+### dao
+Generate dao file
+
+Example:
+```bash
+yo lark:dao user.js  # create models/dao/user.js
+```
+

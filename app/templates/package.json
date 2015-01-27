@@ -1,0 +1,13 @@
+{
+  "name": "<%= appname %>",
+  "version": "0.0.0",
+  "description": "lark seed application",
+  "main": "index.js",
+  "dependencies": {
+    "lark": "0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  }
+}
