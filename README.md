@@ -45,7 +45,7 @@ Example:
 yo lark
 ```
 
-### controller
+### Controller
 Generate controller file
 
 Example:
@@ -55,7 +55,7 @@ yo lark:controller user/  # create controllers/user/index.js
 yo lark:controller user/create.js  # create controllers/user/create.js
 ```
 
-### dataService
+### DataService
 Generate dataService file
 
 Example:
@@ -63,7 +63,7 @@ Example:
 yo lark:data user.js  # create models/dataService/user.js
 ```
 
-### pageService
+### PageService
 Generate pageService file
 
 Example:
@@ -71,7 +71,7 @@ Example:
 yo lark:page user.js  # create models/pageService/user.js
 ```
 
-### dao
+### Dao
 Generate dao file
 
 Example:
