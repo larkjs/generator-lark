@@ -3,7 +3,10 @@
 
 > Yeoman generator for Lark.js - lets you quickly set up a project with sensible defaults and best practices.
 
-
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![NPM downloads][downloads-image]][npm-url]
+[![Node.js dependencies][david-image]][david-url]
 
 ## Usage
 
@@ -26,7 +29,7 @@ yo lark [app-name]
 
 Available generators:
 
-* [lark](#app) (aka [angular:app](#app))
+* [lark](#app) (aka [lark:app](#app))
 * [lark:controller](#controller)
 * [lark:data](#dataService)
 * [lark:page](#pageService)
@@ -76,3 +79,10 @@ Example:
 yo lark:dao user.js  # create models/dao/user.js
 ```
 
+[npm-image]: https://img.shields.io/npm/v/generator-lark.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/generator-lark
+[travis-image]: https://img.shields.io/travis/larkjs/generator-lark/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/larkjs/generator-lark
+[downloads-image]: https://img.shields.io/npm/dm/generator-lark.svg?style=flat-square
+[david-image]: https://img.shields.io/david/larkjs/generator-lark.svg?style=flat-square
+[david-url]: https://david-dm.org/larkjs/generator-lark
