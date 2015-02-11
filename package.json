@@ -1,14 +1,14 @@
 {
   "name": "generator-lark",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "larkjs/generator-lark",
   "author": {
-    "name": "",
-    "email": "",
-    "url": "https://github.com/larkjs"
+    "name": "mdemo",
+    "email": "mengdesen09@qq.com",
+    "url": "https://github.com/demohi"
   },
   "engines": {
     "node": ">=0.10.0"

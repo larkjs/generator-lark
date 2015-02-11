@@ -27,7 +27,8 @@ describe('lark:app', function () {
       'controllers/user/list.js',
       'models/dao/demo.js',
       'models/dataServices/demo.js',
-      'models/pageServices/demo.js'
+      'models/pageServices/demo.js',
+      'benchmarks/run.sh'
     ]);
   });
 });
@@ -109,6 +110,18 @@ describe('lark:page path:user.js', function(){
   it('creates files', function () {
     assert.file([
       'models/pageService/user.js'
+    ]);
+  });
+});
+describe('lark:benchmark', function(){
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../benchmark'))
+      .inDir(path.join(os.tmpdir(), './temp-test'))
+      .on('end', done);
+  });
+  it('creates files', function () {
+    assert.file([
+      'benchmarks/run.sh'
     ]);
   });
 });

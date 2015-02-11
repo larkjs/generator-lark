@@ -42,6 +42,9 @@ module.exports = yeoman.generators.Base.extend({
     },
     models: function () {
       this.directory('models', 'models');
+    },
+    benchmarks: function(){
+      this.directory('benchmarks', 'benchmarks');
     }
   },
 
