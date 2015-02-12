@@ -10,6 +10,6 @@
 var lark = require('lark');
 var app = lark();
 
-app.run(3000, function(port){
+app.run(3000, function (port) {
   console.log('running on', port);
 });

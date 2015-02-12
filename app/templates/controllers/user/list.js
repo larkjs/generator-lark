@@ -3,7 +3,7 @@
  */
 module.exports = function (router) {
   router.get('/', function *(next) {
-    this.body = 'Hello /user/list';
+    yield this.render('user.ejs', {user: {name: 'lark'}});
     yield next;
   });
   return router;

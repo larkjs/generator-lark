@@ -4,7 +4,8 @@
   "description": "lark seed application",
   "main": "index.js",
   "dependencies": {
-    "lark": "0.4.0"
+    "lark": "0.6.0",
+    "ejs": "2.2.4"
   },
   "devDependencies": {},
   "scripts": {

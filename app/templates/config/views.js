@@ -1,5 +1,6 @@
-
 module.exports.views = {
-  engine: 'handlebars',
-  layout: 'layouts'
+  directory: 'views',
+  map: {
+    ejs: "ejs"
+  }
 };
