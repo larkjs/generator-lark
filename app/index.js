@@ -11,6 +11,7 @@ module.exports = yeoman.generators.Base.extend({
     this.cwd = path.basename(process.cwd());
     this.appname = this.appname || this.cwd;
     this.appname = this._.camelize(this._.slugify(this._.humanize(this.appname)));
+    this.env.larkPkg = this.env.larkPkg || {};
   },
   initializing: function () {
     this.pkg = require('../package.json');
@@ -31,8 +32,11 @@ module.exports = yeoman.generators.Base.extend({
       }
     },
     file: function () {
-      this.template('package.json', 'package.json', {appname: this.appname, larkVersion: this.env.larkPkg.version});
+      this.template('package.json', 'package.json', {appname: this.appname, larkVersion: this.env.larkPkg.version || '0.8.0'});
       this.copy('index.js');
+    },
+    bin: function () {
+      this.directory('bin', 'bin');
     },
     config: function () {
       this.directory('config', 'config');
@@ -46,8 +50,11 @@ module.exports = yeoman.generators.Base.extend({
     statics: function () {
       this.directory('statics', 'statics');
     },
-    benchmarks: function(){
+    benchmarks: function (){
       this.directory('benchmarks', 'benchmarks');
+    },
+    log: function () {
+      this.directory('logs', 'logs');
     }
   },
 
