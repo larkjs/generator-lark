@@ -1,10 +1,13 @@
 {
   "name": "generator-lark",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "larkjs/generator-lark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larkjs/generator-lark"
+  },
   "author": {
     "name": "mdemo",
     "email": "mengdesen09@qq.com",
@@ -26,5 +29,39 @@
   },
   "devDependencies": {
     "mocha": "*"
-  }
+  },
+  "gitHead": "706eb89f1462996261bb24a78a098c5fec9c735a",
+  "bugs": {
+    "url": "https://github.com/larkjs/generator-lark/issues"
+  },
+  "homepage": "https://github.com/larkjs/generator-lark",
+  "_id": "generator-lark@0.4.4",
+  "_shasum": "5b294ff4fcbed6635a0c9d34c283cfb0adcbe263",
+  "_from": "generator-lark@>=0.4.4 <0.5.0",
+  "_npmVersion": "2.0.0",
+  "_npmUser": {
+    "name": "mdemo",
+    "email": "mengdesen09@qq.com"
+  },
+  "maintainers": [
+    {
+      "name": "mdemo",
+      "email": "mengdesen09@qq.com"
+    },
+    {
+      "name": "zezhou",
+      "email": "xuyizhi@gmail.com"
+    },
+    {
+      "name": "viringbells",
+      "email": "viringbells@qq.com.cn"
+    }
+  ],
+  "dist": {
+    "shasum": "5b294ff4fcbed6635a0c9d34c283cfb0adcbe263",
+    "tarball": "http://registry.npmjs.org/generator-lark/-/generator-lark-0.4.4.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/generator-lark/-/generator-lark-0.4.4.tgz",
+  "readme": "ERROR: No README data found!"
 }
