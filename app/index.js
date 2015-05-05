@@ -31,7 +31,7 @@ module.exports = yeoman.generators.Base.extend({
       }
     },
     file: function () {
-      this.template('package.json', 'package.json', {appname: this.appname});
+      this.template('package.json', 'package.json', {appname: this.appname, larkVersion: this.env.larkPkg.version});
       this.copy('index.js');
     },
     config: function () {

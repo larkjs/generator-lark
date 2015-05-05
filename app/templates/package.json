@@ -4,7 +4,7 @@
   "description": "lark seed application",
   "main": "index.js",
   "dependencies": {
-    "lark": "0.8.0",
+    "lark": "<%= larkVersion %>",
     "ejs": "2.2.4"
   },
   "devDependencies": {},
