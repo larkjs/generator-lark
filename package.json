@@ -1,6 +1,6 @@
 {
   "name": "generator-lark",
-  "version": "0.4.7",
+  "version": "0.4.6",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
