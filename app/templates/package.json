@@ -10,5 +10,6 @@
   "devDependencies": {},
   "scripts": {
     "test": "npm test"
-  }
+  },
+  "lark-app" : true
 }
