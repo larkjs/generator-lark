@@ -18,7 +18,7 @@ module.exports = yeoman.generators.Base.extend({
     if(!extname || extname != '.js'){
       this.path = path.join(this.path, 'index.js');
     }
-    this.path = path.join('models', 'pageService', this.path);
+    this.path = path.join('models', 'pageServices', this.path);
   },
   initializing: function () {
     this.pkg = require('../package.json');
