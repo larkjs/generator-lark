@@ -96,7 +96,7 @@ describe('lark:data path:user.js', function(){
   });
   it('creates files', function () {
     assert.file([
-      'models/dataService/user.js'
+      'models/dataServices/user.js'
     ]);
   });
 });
@@ -109,7 +109,7 @@ describe('lark:page path:user.js', function(){
   });
   it('creates files', function () {
     assert.file([
-      'models/pageService/user.js'
+      'models/pageServices/user.js'
     ]);
   });
 });
