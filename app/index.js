@@ -12,6 +12,7 @@ module.exports = yeoman.generators.Base.extend({
     this.appname = this.appname || this.cwd;
     this.appname = this._.camelize(this._.slugify(this._.humanize(this.appname)));
     this.env.larkPkg = this.env.larkPkg || {};
+    this.var_name = this.model_name = 'demo';
   },
   initializing: function () {
     this.pkg = require('../package.json');
@@ -55,7 +56,10 @@ module.exports = yeoman.generators.Base.extend({
     },
     log: function () {
       this.directory('logs', 'logs');
-    }
+    },
+    views: function () {
+      this.directory('views', 'views');
+    },
   },
 
   install: function () {

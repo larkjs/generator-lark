@@ -15,6 +15,14 @@ module.exports = yeoman.generators.Base.extend({
     yeoman.generators.Base.apply(this, arguments);
     this.argument('path', {type: String, required: true});
     var extname = path.extname(this.path);
+    var dirname = path.dirname(this.path);
+    var basename = path.basename(this.path, extname);
+    this.model_name = path.join(dirname, basename).split('/').filter(function (item) {
+      return 'string' === typeof item && item.trim() !== '';
+    }).join('/');
+    this.var_name = path.join(dirname, basename).split('/').filter(function (item) {
+      return 'string' === typeof item && item.trim() !== '';
+    }).join('_');
     if (!extname || extname != '.js') {
       this.path = path.join(this.path, 'index.js');
     }
