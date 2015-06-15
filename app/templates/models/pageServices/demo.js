@@ -6,6 +6,7 @@
 /**
  * You can access these methods by this.pageServices["<%= model_name %>"]
  * in controllers
+ * You can access data modules by this.dataServices[$NAME]
  **/
 var <%= var_name %> = module.exports = {};
 

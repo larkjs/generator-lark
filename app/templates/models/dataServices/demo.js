@@ -6,6 +6,7 @@
 /**
  * You can access these methods by this.dataServices["<%= model_name %>"]
  * in page services
+ * You can access dao modules by this.daoServices[$NAME]
  **/
 var <%= var_name %> = module.exports = {};
 
