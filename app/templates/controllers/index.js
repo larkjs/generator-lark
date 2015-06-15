@@ -8,7 +8,7 @@
  **/
 //TODO : dev your own controllers
 module.exports = function * (next) {
-    this.body = yield this.pageServices.demo.render();
+    this.body = yield this.pageServices.demo.render(this);
     yield next;
 }
 
@@ -21,7 +21,7 @@ module.exports = function * (next) {
    module.exports = function (router) {
      //TODO : dev your own controllers
      router.get('/', function *(next) {
-       this.body = this.pageServices['demo'].render();
+       this.body = this.pageServices['demo'].render(this);
        yield next;
      });
      return router;
