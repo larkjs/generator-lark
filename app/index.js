@@ -64,6 +64,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
+    this.npmInstall(['grunt'], { 'saveDev': true });
     this.installDependencies({
       skipInstall: this.options['skip-install'],
       bower: false
