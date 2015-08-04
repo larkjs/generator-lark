@@ -33,7 +33,7 @@ module.exports = yeoman.generators.Base.extend({
       }
     },
     file: function () {
-      this.template('package.json', 'package.json', {appname: this.appname, larkVersion: this.env.larkPkg.version || '0.8.0'});
+      this.template('package.json', 'package.json', {appname: this.appname, larkVersion: this.env.larkPkg.version || '0.10.10'});
       this.copy('index.js');
       this.copy('Gruntfile.js');
     },
