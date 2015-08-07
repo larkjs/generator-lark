@@ -4,13 +4,12 @@
  */
 
 /**
- * Respond to METHOD /create on this server
+ * Route prefix is /create
  * Use this.pageServices to access model layers
  **/
 module.exports = function (router) {
-  router.get('/', function *(next) {
-    yield this.render('user/');
-    yield next;
-  });
-  return router;
+    router.get('/', function *(next) {
+        yield this.render('user/');
+        yield next;
+    });
 };
