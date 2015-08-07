@@ -7,7 +7,9 @@
     "lark": "<%= larkVersion %>",
     "ejs": "2.2.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "*"
+  },
   "scripts": {
     "test": "npm test"
   },

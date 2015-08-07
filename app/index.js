@@ -36,8 +36,9 @@ module.exports = yeoman.generators.Base.extend({
       }
     },
     file: function () {
-      this.template('package.json', 'package.json', {appname: this.appname, larkVersion: this.larkVersion});
+      this.template('package.json', 'package.json', {appname: this.appname, larkVersion: this.env.larkPkg.version || '0.10.10'});
       this.copy('index.js');
+      this.copy('Gruntfile.js');
     },
     bin: function () {
       this.directory('bin', 'bin');
@@ -91,6 +92,7 @@ function install () {
     if (this.larkVersion === this.env.larkPkg.version) {
         copyLark.call(this) && updateLark.call(this);
     }
+    this.npmInstall(['grunt'], { 'saveDev': true });
     installDenpendencies.call(this);
 }
 

@@ -15,7 +15,6 @@ module.exports = function (router) {
     });
 };
 
-
 /**
  * More Usage:
  * You can define some complicated routes like this:
@@ -25,5 +24,4 @@ module.exports = function (router) {
         yield next;
     }
 
-
- **/
+**/
