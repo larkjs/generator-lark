@@ -119,7 +119,6 @@ function copyLark (callback) {
 function updateLark (callback) {
     console.log('   ' + chalk.yellow('update') + ' ' + chalk.red('Lark.js') + ' by npm ...\n\n\n');
     var larkPath = path.join(this.appPath, 'node_modules/lark');
-    console.log("update start");
     var cmd = 'cd ' + larkPath + ' && npm install --production';
     try {
         exec(cmd);
@@ -127,7 +126,6 @@ function updateLark (callback) {
     catch (e) {
         console.log('   ' + chalk.red('update failed') + ' error when executing ' + cmd + '; error message is ' + e.message);
     }
-    console.log("update end");
     return true;
 }
 
