@@ -6,23 +6,24 @@
 /**
  * You can access these methods by this.dataServices["<%= model_name %>"]
  * in page services
+ * You can access dao modules by this.daoServices[$NAME]
  **/
-var <%= var_name %> = module.exports = {};
-
-//TODO: dev your own data service methods
-<%= var_name%>.getData = function * () {
-  return (yield this.daoServices.demo.getData()) + '-dataService';
+module.exports = function(mvc){
+    var <%= var_name %> = mvc.dataService.create("<%= model_name %>");
+    //TODO: dev your own data service methods
+    <%= var_name %>.getData = function * (ctx) {
+        return (yield this.daoServices.demo.getData(ctx)) + '-dataService'
+    }
 };
 
 /**
  * More usage :
  *
-    module.exports = function(mvc){
-      var <%= var_name %> = mvc.dataService.create("<%= model_name %>");
-      //TODO: dev your own data service methods
-      <%= var_name %>.getData = function * () {
-        return (yield this.daoServices.demo.getData()) + '-dataService'
-      }
+
+    var <%= var_name %> = module.exports = {};
+
+    <%= var_name%>.getData = function * (ctx) {
+        return (yield this.daoServices.demo.getData(ctx)) + '-dataService';
     };
 
  **/
