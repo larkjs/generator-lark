@@ -103,7 +103,8 @@ function copyLark (callback) {
         var from = path.dirname(require.resolve('lark'));
     }
     catch (e) {
-        console.log('   ' + chalk.red('copy failed') + ' can not find module "lark", ' + chalk.yellow('copy') + ' abandoned ...');
+        console.log('   ' + chalk.yellow('notice') + ' can not find module "lark", ' + chalk.yellow('copy') + ' abandoned ...');
+        return false;
     }
     var to = 'node_modules/lark';
     var cmd = 'cp -r ' + from + ' ' + to;
@@ -111,7 +112,8 @@ function copyLark (callback) {
         exec(cmd);
     }
     catch (e) {
-        console.log('   ' + chalk.red('copy failed') + ' error when executing ' + cmd + '; error message is ' + e.message);
+        console.log('   ' + chalk.yellow('notice') + ' copy failed, ' + e.message);
+        return false;
     }
     return true;
 }
@@ -119,15 +121,14 @@ function copyLark (callback) {
 function updateLark (callback) {
     console.log('   ' + chalk.yellow('update') + ' ' + chalk.red('Lark.js') + ' by npm ...\n\n\n');
     var larkPath = path.join(this.appPath, 'node_modules/lark');
-    console.log("update start");
     var cmd = 'cd ' + larkPath + ' && npm install --production';
     try {
         exec(cmd);
     }
     catch (e) {
-        console.log('   ' + chalk.red('update failed') + ' error when executing ' + cmd + '; error message is ' + e.message);
+        console.log('   ' + chalk.red('warn') + '   update lark failed, you should update it yourself by running ' + chalk.yellow(cmd));
+        return false;
     }
-    console.log("update end");
     return true;
 }
 
