@@ -90,7 +90,7 @@ function install () {
     }
     //if version of lark in app is the same as the lark called this generator
     if (this.larkVersion === this.env.larkPkg.version) {
-        copyLark.call(this) && updateLark.call(this);
+        (copyLark.call(this) && updateLark.call(this)) || (cleanCopy.call(this));
     }
     this.npmInstall(['grunt'], { 'saveDev': true });
     installDenpendencies.call(this);
@@ -105,7 +105,8 @@ function copyLark (callback) {
         var from = path.dirname(require.resolve('lark'));
     }
     catch (e) {
-        console.log('   ' + chalk.red('copy failed') + ' can not find module "lark", ' + chalk.yellow('copy') + ' abandoned ...');
+        console.log('   ' + chalk.red('warn') + '   ' + chalk.yellow('copy') + ' failed can not find module "lark"');
+        return false;
     }
     var to = 'node_modules/lark';
     var cmd = 'cp -r ' + from + ' ' + to;
@@ -113,21 +114,30 @@ function copyLark (callback) {
         exec(cmd);
     }
     catch (e) {
-        console.log('   ' + chalk.red('copy failed') + ' error when executing ' + cmd + '; error message is ' + e.message);
+        console.log('   ' + chalk.red('warn') + '   ' + chalk.yellow('copy') + ' error when executing ' + cmd);
+        return false;
     }
     return true;
 }
 
 function updateLark (callback) {
-    console.log('   ' + chalk.yellow('update') + ' ' + chalk.red('Lark.js') + ' by npm ...\n\n\n');
+    console.log('   ' + chalk.yellow('update') + ' ' + chalk.red('Lark.js') + ' by npm ...');
     var larkPath = path.join(this.appPath, 'node_modules/lark');
     var cmd = 'cd ' + larkPath + ' && npm install --production';
     try {
         exec(cmd);
     }
     catch (e) {
-        console.log('   ' + chalk.red('update failed') + ' error when executing ' + cmd + '; error message is ' + e.message);
+        console.log('   ' + chalk.red('warn') + '   ' + chalk.yellow('update') + ' failed error when executing ' + cmd);
+        return false;
     }
+    return true;
+}
+
+function cleanCopy (callback) {
+    console.log('   ' + chalk.yellow('clean') + ' ' + chalk.red('Lark.js') + ' and install it by npm');
+    var larkPath = path.join(this.appPath, 'node_modules/lark');
+    exec('rm -rf ' + larkPath);
     return true;
 }
 
