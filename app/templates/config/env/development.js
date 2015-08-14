@@ -8,9 +8,6 @@
 
 module.exports = {
   port: 3000,
-  bootstrap:{
-    enable: false
-  },
   logging:{
     level: 1
   }
