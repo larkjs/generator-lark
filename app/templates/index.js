@@ -5,11 +5,20 @@
  */
 'use strict';
 
-var lark = require('lark');
-var app = lark();
+var lark    = require('lark');
+var logger  = require('lark/logging');
+var app     = lark();
+
+app.on('error', function (e, ctx) {
+    logger.log(e.stack);
+    if (e.status && !e.status.match(/^4\d\d$/)) {
+        return;
+    }
+    logger.error(e.stack);
+});
 
 app.run(function (port) {
-  console.log('running on', port);
+    console.log('running on', port);
 });
 
 
