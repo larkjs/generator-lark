@@ -2,6 +2,7 @@
  * Created by Lark on <%= new Date() %>
  * This is for demo, feel free to remove this file
  */
+'use strict';
 
 /**
  * Route prefix is /create

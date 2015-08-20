@@ -1,6 +1,7 @@
 /**
  * Created by Lark on <%= new Date() %>
  */
+'use strict';
 
 /**
  * Respond to route : METHOD / on this server
